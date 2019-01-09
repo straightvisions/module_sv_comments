@@ -11,22 +11,18 @@ namespace sv_100;
  */
 
 class sv_comments extends init {
-	static $scripts_loaded						= false;
-	
 	public function __construct() {
 	
 	}
 
 	public function init() {
-		// Module Title & Description
+		// Module Info
 		$this->set_module_title( 'SV Comments' );
-		$this->set_module_desc( 'This module gives the ability to manage and display comments of the current post/page via the "[sv_comments]" shortcode.' );
+		$this->set_module_desc( __( 'This module gives the ability to display comments of the current post/page via the "[sv_comments]" shortcode.', $this->get_module_name() ) );
 
-		// Loading Styles & Scripts
-		// CSS
-		$css							        = static::$scripts->create( $this );
-		$css
-			->set_source( $this->get_file_url( 'lib/css/frontend.css' ), $this->get_file_path( 'lib/css/frontend.css' ) );
+		// Loads Styles
+		static::$scripts->create( $this )
+	        ->set_source( $this->get_file_url( 'lib/css/frontend.css' ), $this->get_file_path( 'lib/css/frontend.css' ) );
 
 		// Shortcodes
 		add_shortcode( $this->get_module_name(), array( $this, 'shortcode' ) );
