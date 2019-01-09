@@ -16,8 +16,20 @@ class sv_comments extends init {
 	public function __construct( $path, $url ) {
 		$this->path								= $path;
 		$this->url								= $url;
-		$this->name								= get_class( $this );
+	}
 
+	public function init() {
+		// Module Title & Description
+		$this->set_module_title( 'SV Comments' );
+		$this->set_module_desc( 'This module gives the ability to manage and display comments of the current post/page via the "[sv_comments]" shortcode.' );
+
+		// Loading Styles & Scripts
+		// CSS
+		$css							        = static::$scripts->create( $this );
+		$css
+			->set_source( $this->get_file_url( 'lib/css/frontend.css' ), $this->get_file_path( 'lib/css/frontend.css' ) );
+
+		// Shortcodes
 		add_shortcode( $this->get_module_name(), array( $this, 'shortcode' ) );
 	}
 
@@ -29,8 +41,6 @@ class sv_comments extends init {
 			$settings,
 			$this->get_module_name()
 		);
-
-		$this->module_enqueue_scripts( $settings['inline'] );
 
 		ob_start();
 		include ( $this->get_file_path( 'lib/tpl/frontend.php' ) );
