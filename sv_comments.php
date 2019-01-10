@@ -20,15 +20,15 @@ class sv_comments extends init {
 		$this->set_module_title( 'SV Comments' );
 		$this->set_module_desc( __( 'This module gives the ability to display comments of the current post/page via the "[sv_comments]" shortcode.', $this->get_module_name() ) );
 
-		// Loads Styles
-		static::$scripts->create( $this )
-	        ->set_source( $this->get_file_url( 'lib/css/frontend.css' ), $this->get_file_path( 'lib/css/frontend.css' ) );
-
 		// Shortcodes
 		add_shortcode( $this->get_module_name(), array( $this, 'shortcode' ) );
 	}
 
 	public function shortcode( $settings ) {
+		// Loads Styles
+		static::$scripts->create( $this )
+		                ->set_source( $this->get_file_url( 'lib/css/frontend.css' ), $this->get_file_path( 'lib/css/frontend.css' ) );
+
 		$settings								= shortcode_atts(
 			array(
 				'inline'						=> false,
