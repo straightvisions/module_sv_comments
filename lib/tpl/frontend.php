@@ -1,6 +1,5 @@
-<!-- Post Comments -->
-<div class="<?php echo $this->get_module_name(); ?> mt-4 py-4">
-	<h3 class="text-center mb-5">
+<div class="<?php echo $this->get_prefix(); ?>">
+	<h3 class="<?php echo $this->get_prefix( 'title' ); ?>">
 		<?php
 		$comments = get_comments( array( 'post_id' => get_the_ID() ) );
 
@@ -16,72 +15,54 @@
 
 	foreach ( $comments as $comment ) {
 		$author = get_user_by( 'email', $comment->comment_author_email );
-		?>
-		<article id="comment-<?php echo $comment->comment_ID; ?>"
-				 class="<?php echo $i < ( count( $comments ) - 1 ) ? 'border-bottom' : ''; ?> pb-4 mb-4">
-			<div class="comment-data row">
-				<!-- Comment Author Avatar -->
-				<div class="comment-author-image text-right col-3 col-sm-2">
-					<?php
-					if ( $author ) {
-						?>
-						<a href="<?php echo get_author_posts_url( $author->__get( 'id' ) ); ?>">
-							<?php
-							echo get_avatar( $comment->comment_author_email, '100px' );
-							?>
-						</a>
-						<?php
-					} else {
-						echo get_avatar( $comment->comment_author_email, '100px' );
-					}
-					?>
-				</div>
+    ?>
 
-				<!-- Comment -->
-				<div class="comment col-7 col-sm-9">
-					<!-- Comment Author Name -->
-					<h5>
-						<?php
-						if ( $author ) {
-							?>
-							<a href="<?php echo get_author_posts_url( $author->__get( 'id' ) ); ?>">
-								<?php
-								echo $comment->comment_author;
-								?>
-							</a>
-							<?php
-						} else {
-							echo $comment->comment_author;
-						}
-						?>
-					</h5>
+    <div id="comment-<?php echo $comment->comment_ID; ?>" class="<?php echo $this->get_prefix( 'comment' ); ?>">
+        <div class="<?php echo $this->get_prefix( 'author_avatar_wrapper' ); ?>">
+	        <div class="<?php echo $this->get_prefix( 'author_avatar' ); ?>">
+		        <?php
+		        if ( get_avatar( $comment->comment_author_email, '80px' ) ) {
+			        echo get_avatar( $comment->comment_author_email, '80px' );
+		        }
+		        ?>
+            </div>
+        </div>
+        <div class="<?php echo $this->get_prefix( 'comment_content_wrapper' ); ?>">
+            <span class="<?php echo $this->get_prefix( 'author' ); ?>">
+	            <?php echo $comment->comment_author; ?>
+            </span>
+            <span class="<?php echo $this->get_prefix( 'comment_date' ); ?>">
+                <?php
+                echo date_i18n( 'j. F, Y', strtotime( $comment->comment_date ), true )
+                     . ' '
+                     . __( 'at', $this->get_module_name() )
+                     . ' '
+                     . date_i18n( 'H:i', strtotime( $comment->comment_date ), true );
+                ?>
+            </span>
+            <span class="<?php echo $this->get_prefix( 'comment_content' ); ?>"><?php echo $comment->comment_content; ?></span>
+            <?php
+            /* @todo Check why there is no output
+            comment_reply_link(
+                array(
+                    'reply_text'    => __( 'Reply', $this->get_module_name() ),
+                    'login_text'    => __( 'Log in to leave a comment', $this->get_module_name() ),
+                    'depth'         => 2,
+                ),
+	            $comment->comment_ID,
+                $comment->comment_post_ID,
+            );
+            */
+            ?>
+        </div>
+    </div>
 
-					<!-- Comment Date -->
-					<div class="comment-date">
-						<?php
-						echo date_i18n( 'j. F, Y', strtotime( $comment->comment_date ), true )
-						     . ' '
-						     . __( 'at', $this->get_module_name() )
-						     . ' '
-						     . date_i18n( 'H:i', strtotime( $comment->comment_date ), true );
-						?>
-					</div>
-
-					<!-- Comment Text -->
-					<div class="comment-text mt-3"><?php echo $comment->comment_content; ?></div>
-				</div>
-
-				<!-- Comment Replay Button -->
-				<div class="comment-reply col-2 col-sm-1"></div>
-			</div>
-		</article>
-		<?php
+    <?php
 		$i++;
 	}
 	?>
 
-	<!-- Comment Form -->
-	<div class="comment-form">
+	<div class="<?php echo $this->get_prefix( 'comment_form' ); ?>">
 		<?php comment_form(); ?>
 	</div>
 </div>
