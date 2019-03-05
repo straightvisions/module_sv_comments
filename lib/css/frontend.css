@@ -22,10 +22,20 @@
 
 .sv_100_sv_comments_comment {
 	background: rgb( var( --color-bg-secondary ) );
-	border-radius: 5px;
 	padding: 30px;
 	display: flex;
 	margin-bottom: 20px;
+}
+
+.sv_100_sv_comments_author,
+.sv_100_sv_comments_author a {
+	text-decoration: none;
+	color: rgb( var( --color-primary ) );
+	transition: .25s ease;
+}
+
+.sv_100_sv_comments_author a:hover {
+	text-decoration: underline;
 }
 
 .sv_100_sv_comments_author_avatar_wrapper {
