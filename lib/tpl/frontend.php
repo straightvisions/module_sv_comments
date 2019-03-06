@@ -29,7 +29,9 @@
         </div>
         <div class="<?php echo $this->get_prefix( 'comment_content_wrapper' ); ?>">
             <span class="<?php echo $this->get_prefix( 'author' ); ?>">
-	            <?php echo $comment->comment_author; ?>
+	            <?php echo ( $comment->comment_author_url
+					? '<a href="' . $comment->comment_author_url . '" target="_blank">' . $comment->comment_author . '</a>'
+					: $comment->comment_author ); ?>
             </span>
             <span class="<?php echo $this->get_prefix( 'comment_date' ); ?>">
                 <?php
