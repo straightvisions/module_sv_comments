@@ -44,17 +44,14 @@
             </span>
             <span class="<?php echo $this->get_prefix( 'comment_content' ); ?>"><?php echo $comment->comment_content; ?></span>
             <?php
-            /* @todo Check why there is no output
             comment_reply_link(
                 array(
+	                'depth'         => 1,
+                    'max_depth'		=> 3,
                     'reply_text'    => __( 'Reply', $this->get_module_name() ),
                     'login_text'    => __( 'Log in to leave a comment', $this->get_module_name() ),
-                    'depth'         => 2,
-                ),
-	            $comment->comment_ID,
-                $comment->comment_post_ID,
+                )
             );
-            */
             ?>
         </div>
     </div>
