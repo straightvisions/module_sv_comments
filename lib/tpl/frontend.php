@@ -1,7 +1,10 @@
 <div class="<?php echo $this->get_prefix(); ?>">
 	<h3 class="<?php echo $this->get_prefix( 'title' ); ?>">
 		<?php
-		$comments = get_comments( array( 'post_id' => get_the_ID() ) );
+		$comments = get_comments( array(
+				'post_id' 						=> get_the_ID() ,
+				'status'						=> 'approve'
+		));
 
 		echo count( $comments ) . ' ' . ( count( $comments ) < 2
 				? __( 'Comment', $this->get_module_name() )
@@ -15,7 +18,7 @@
 
 	foreach ( $comments as $comment ) {
 		$author = get_user_by( 'email', $comment->comment_author_email );
-    ?>
+	?>
 
     <div id="comment-<?php echo $comment->comment_ID; ?>" class="<?php echo $this->get_prefix( 'comment' ); ?>">
         <div class="<?php echo $this->get_prefix( 'author_avatar_wrapper' ); ?>">
@@ -44,17 +47,17 @@
             </span>
             <span class="<?php echo $this->get_prefix( 'comment_content' ); ?>"><?php echo $comment->comment_content; ?></span>
             <?php
-            /* @todo Check why there is no output
+			/* @todo Disabled due not working reply function
             comment_reply_link(
                 array(
+					'add_below'		=> $comment->comment_ID,
+	                'depth'         => 1,
+                    'max_depth'		=> 3,
                     'reply_text'    => __( 'Reply', $this->get_module_name() ),
                     'login_text'    => __( 'Log in to leave a comment', $this->get_module_name() ),
-                    'depth'         => 2,
-                ),
-	            $comment->comment_ID,
-                $comment->comment_post_ID,
+                )
             );
-            */
+			*/
             ?>
         </div>
     </div>

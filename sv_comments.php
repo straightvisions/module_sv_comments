@@ -23,13 +23,14 @@ class sv_comments extends init {
 
 		// Shortcodes
 		add_shortcode( $this->get_module_name(), array( $this, 'shortcode' ) );
+
+		$this->scripts_queue['frontend']			= static::$scripts->create( $this )
+			->set_ID( 'frontend' )
+			->set_path('lib/css/frontend.css')
+			->set_inline(false);
 	}
 
 	public function shortcode( $settings ) {
-		// Loads Styles
-		static::$scripts->create( $this )
-		                ->set_source( $this->get_file_url( 'lib/css/frontend.css' ), $this->get_file_path( 'lib/css/frontend.css' ) );
-
 		$settings								= shortcode_atts(
 			array(
 				'inline'						=> false,
@@ -37,9 +38,15 @@ class sv_comments extends init {
 			$settings,
 			$this->get_module_name()
 		);
-
+		
+		// Loads Styles
+		$this->scripts_queue['frontend']
+			->set_inline($settings['inline'])
+			->set_is_enqueued();
+		
+		
 		ob_start();
-		include ( $this->get_file_path( 'lib/tpl/frontend.php' ) );
+		include ( $this->get_path( 'lib/tpl/frontend.php' ) );
 		$output									= ob_get_contents();
 		ob_end_clean();
 
