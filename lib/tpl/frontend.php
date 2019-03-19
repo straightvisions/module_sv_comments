@@ -38,11 +38,7 @@
             </span>
             <span class="<?php echo $this->get_prefix( 'comment_date' ); ?>">
                 <?php
-                echo date_i18n( 'j. F, Y', strtotime( $comment->comment_date ), true )
-                     . ' '
-                     . __( 'at', $this->get_module_name() )
-                     . ' '
-                     . date_i18n( 'H:i', strtotime( $comment->comment_date ), true );
+                echo get_comment_date( '', $comment->comment_ID );
                 ?>
             </span>
             <span class="<?php echo $this->get_prefix( 'comment_content' ); ?>"><?php echo $comment->comment_content; ?></span>
