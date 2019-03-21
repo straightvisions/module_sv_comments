@@ -127,13 +127,19 @@
 .sv_100_sv_comments_comment_form .comment-form-url input {
 	width: 100%;
 	background: rgb( var( --color-bg-primary ) );
-	border: 1px solid rgba( 0, 0, 0, .1 );
-	border-radius: 3px;
-	padding: 10px;
+	border: none;
+	border-bottom: 1px solid rgba( 0, 0, 0, .1 );
+	padding-bottom: 5px;
 	color: rgb( var( --color-secondary ) );
 	font-family: 'Roboto', sans-serif;
 	outline: none;
 	font-size: .9rem;
+	max-width: 100%;
+}
+
+.sv_100_sv_comments_comment_form .comment-form-comment textarea {
+	border: 1px solid rgba( 0, 0, 0, .1 );
+	padding: 10px;
 }
 
 .sv_100_sv_comments_comment_form .form-submit input {
@@ -142,7 +148,6 @@
 	border: none;
 	padding: 10px 15px;
 	cursor: pointer;
-	border-radius: 3px;
 	font-size: .9rem;
 	transition: .25s ease;
 }
