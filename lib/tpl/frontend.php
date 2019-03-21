@@ -6,7 +6,7 @@
 				'status'						=> 'approve'
 		));
 
-		echo count( $comments ) . ' ' . ( count( $comments ) < 2
+		echo count( $comments ) . ' ' . ( count( $comments ) == 1
 				? __( 'Comment', $this->get_module_name() )
 				: __( 'Comments', $this->get_module_name() )
 			);
