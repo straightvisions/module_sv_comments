@@ -50,7 +50,7 @@ class sv_comments extends init {
 			$this->get_module_name()
 		);
 
-		return $this->router( $settings );
+		return comments_open() ? $this->router( $settings ) : '';
 	}
 
 	// Handles the routing of the templates
