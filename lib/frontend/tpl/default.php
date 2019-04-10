@@ -1,4 +1,4 @@
-<div class="<?php echo $this->get_prefix(); ?>">
+<div class="<?php echo $this->get_prefix(); ?> sv_common_container">
 	<h3 class="<?php echo $this->get_prefix( 'title' ); ?>">
 		<?php
 		$comments = get_comments( array(
