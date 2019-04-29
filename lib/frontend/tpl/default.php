@@ -1,4 +1,4 @@
-<div class="<?php echo $this->get_prefix(); ?> sv_common_container">
+<div class="<?php echo $this->get_prefix(); ?>">
 	<h3 class="<?php echo $this->get_prefix( 'title' ); ?>">
 		<?php
 		$comments = get_comments( array(
@@ -42,19 +42,6 @@
                 ?>
             </span>
             <span class="<?php echo $this->get_prefix( 'comment_content' ); ?>"><?php echo $comment->comment_content; ?></span>
-            <?php
-			/* @todo Disabled due not working reply function
-            comment_reply_link(
-                array(
-					'add_below'		=> $comment->comment_ID,
-	                'depth'         => 1,
-                    'max_depth'		=> 3,
-                    'reply_text'    => __( 'Reply', $this->get_module_name() ),
-                    'login_text'    => __( 'Log in to leave a comment', $this->get_module_name() ),
-                )
-            );
-			*/
-            ?>
         </div>
     </div>
 
