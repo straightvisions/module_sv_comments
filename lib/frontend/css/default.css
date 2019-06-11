@@ -14,7 +14,7 @@
 .sv_100_sv_comments h3::after {
 	display: block;
 	height: 3px;
-	background: rgb( var( --color-highlight ) );
+	background: rgb( var( --sv-100-color-highlight ) );
 	content: '';
 	margin-top: 15px;
 	max-width: 80px;
@@ -23,7 +23,7 @@
 }
 
 .sv_100_sv_comments_comment {
-	background: rgb( var( --color-bg-secondary ) );
+	background: rgb( var( --sv-100-color-bg-secondary ) );
 	padding: 30px;
 	display: flex;
 	margin-bottom: 20px;
@@ -32,7 +32,7 @@
 .sv_100_sv_comments_author,
 .sv_100_sv_comments_author a {
 	text-decoration: none;
-	color: rgb( var( --color-primary ) );
+	color: rgb( var( --sv-100-color-primary ) );
 	transition: .25s ease;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .sv_100_sv_comments_author_avatar {
-	border: 1px solid rgba( var( --color-secondary ), .3 );
+	border: 1px solid rgba( var( --sv-100-color-secondary ), .3 );
 	border-radius: 100%;
 	overflow: hidden;
 	height: 100%;
@@ -76,13 +76,13 @@
 }
 
 .sv_100_sv_comments_comment_date {
-	color: rgb( var( --color-secondary ) );
+	color: rgb( var( --sv-100-color-secondary ) );
 	font-size: .8rem;
 	margin-bottom: 10px;
 }
 
 .sv_100_sv_comments_comment_content {
-	color: rgb( var( --color-secondary ) );
+	color: rgb( var( --sv-100-color-secondary ) );
 }
 
 /* Comment Form */
@@ -92,18 +92,18 @@
 
 .sv_100_sv_comments_comment_form .logged-in-as,
 .sv_100_sv_comments_comment_form .comment-notes{
-	color: rgb( var( --color-secondary) );
+	color: rgb( var( --sv-100-color-secondary) );
 	font-size: .8rem;
 }
 
 .sv_100_sv_comments_comment_form .logged-in-as a {
 	text-decoration: none;
-	color: rgb( var( --color-secondary) );
+	color: rgb( var( --sv-100-color-secondary) );
 	transition: .25s ease;
 }
 
 .sv_100_sv_comments_comment_form .logged-in-as a:hover {
-	color: rgb( var( --color-highlight ) );
+	color: rgb( var( --sv-100-color-highlight ) );
 }
 
 .sv_100_sv_comments_comment_form .comment-form-comment,
@@ -119,7 +119,7 @@
 .sv_100_sv_comments_comment_form .comment-form-author label,
 .sv_100_sv_comments_comment_form .comment-form-email label,
 .sv_100_sv_comments_comment_form .comment-form-url label {
-	color: rgb( var( --color-secondary) );
+	color: rgb( var( --sv-100-color-secondary) );
 	margin-bottom: 5px;
 }
 
@@ -128,11 +128,11 @@
 .sv_100_sv_comments_comment_form .comment-form-email input,
 .sv_100_sv_comments_comment_form .comment-form-url input {
 	width: 100%;
-	background: rgb( var( --color-bg-primary ) );
+	background: rgb( var( --sv-100-color-bg-primary ) );
 	border: none;
 	border-bottom: 1px solid rgba( 0, 0, 0, .1 );
 	padding-bottom: 5px;
-	color: rgb( var( --color-secondary ) );
+	color: rgb( var( --sv-100-color-secondary ) );
 	font-family: 'Roboto', sans-serif;
 	outline: none;
 	font-size: .9rem;
@@ -145,8 +145,8 @@
 }
 
 .sv_100_sv_comments_comment_form .form-submit input {
-	background: rgba( var( --color-highlight ), .8 );
-	color: rgb( var( --color-contrast ) );
+	background: rgba( var( --sv-100-color-highlight ), .8 );
+	color: rgb( var( --sv-100-color-contrast ) );
 	border: none;
 	padding: 10px 15px;
 	cursor: pointer;
@@ -155,7 +155,7 @@
 }
 
 .sv_100_sv_comments_comment_form .form-submit input:hover {
-	background: rgba( var( --color-highlight ) );
+	background: rgba( var( --sv-100-color-highlight ) );
 }
 
 @media ( min-width: 850px ) {
