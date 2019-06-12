@@ -7,8 +7,8 @@
 		));
 
 		echo count( $comments ) . ' ' . ( count( $comments ) == 1
-				? __( 'Comment', $this->get_module_name() )
-				: __( 'Comments', $this->get_module_name() )
+				? __( 'Comment', 'sv_comments' )
+				: __( 'Comments', 'sv_comments' )
 			);
 		?>
 	</h3>

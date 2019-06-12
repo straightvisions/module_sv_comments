@@ -18,11 +18,11 @@ class sv_comments extends init {
 
 	public function init() {
 		// Translates the module
-		load_theme_textdomain( $this->get_module_name(), $this->get_path( 'languages' ) );
+		load_theme_textdomain( 'sv_comments', $this->get_path( 'languages' ) );
 		
 		// Module Info
 		$this->set_module_title( 'SV Comments' );
-		$this->set_module_desc( __( 'This module gives the ability to display comments of the current post/page via the "[sv_comments]" shortcode.', $this->get_module_name() ) );
+		$this->set_module_desc( __( 'This module gives the ability to display comments of the current post/page via the "[sv_comments]" shortcode.', 'sv_comments' ) );
 
 		// Shortcodes
 		add_shortcode( $this->get_module_name(), array( $this, 'shortcode' ) );
