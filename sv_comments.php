@@ -12,17 +12,10 @@ namespace sv_100;
  */
 
 class sv_comments extends init {
-	public function __construct() {
-	
-	}
-
 	public function init() {
 		// Module Info
 		$this->set_module_title( 'SV Comments' );
 		$this->set_module_desc( __( 'This module gives the ability to display comments of the current post/page via the "[sv_comments]" shortcode.', 'sv_100' ) );
-
-		// Shortcodes
-		add_shortcode( $this->get_module_name(), array( $this, 'shortcode' ) );
 
 		$this->register_scripts();
 	}
@@ -38,7 +31,7 @@ class sv_comments extends init {
 		return $this;
 	}
 
-	public function shortcode( $settings ) :string {
+	public function load( $settings = array() ) :string {
 		$settings								= shortcode_atts(
 			array(
 				'inline'						=> false,
