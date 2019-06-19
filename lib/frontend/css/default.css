@@ -138,12 +138,12 @@
 	max-width: 100%;
 }
 
-.sv_100_sv_comments_comment_form .comment-form-comment textarea {
+.sv_100_sv_content .sv_100_sv_comments_comment_form .comment-form-comment textarea {
 	border: 1px solid rgba( 0, 0, 0, .1 );
 	padding: 10px;
 }
 
-.sv_100_sv_comments_comment_form .form-submit input {
+.sv_100_sv_content .sv_100_sv_comments_comment_form input[type="submit"] {
 	background: rgba( var( --sv-100-color-highlight ), .8 );
 	color: rgb( var( --sv-100-color-contrast ) );
 	border: none;
@@ -153,7 +153,8 @@
 	transition: .25s ease;
 }
 
-.sv_100_sv_comments_comment_form .form-submit input:hover {
+.sv_100_sv_content .sv_100_sv_comments_comment_form input[type="submit"]:hover {
+	color: rgb( var( --sv-100-color-contrast ) );
 	background: rgba( var( --sv-100-color-highlight ) );
 }
 
