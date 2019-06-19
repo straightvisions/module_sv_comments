@@ -1,7 +1,6 @@
 /* Comment */
 .sv_100_sv_comments {
 	margin-top: 50px;
-	padding: 0 var( --padding );
 }
 
 .sv_100_sv_comments h3 {
@@ -172,4 +171,15 @@
 	.sv_100_sv_single_with_sidebar .sv_100_sv_comments {
 		padding-right: 0;
 	}
+}
+
+/* Cookies Consent */
+.sv_100_sv_comments_comment_form .comment-form-cookies-consent {
+	display: flex;
+}
+
+.sv_100_sv_comments_comment_form .comment-form-cookies-consent label {
+	margin-left: 10px;
+	width: calc( 100% - 20px );
+	font-size: .9rem;
 }
