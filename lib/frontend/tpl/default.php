@@ -7,8 +7,8 @@
 		));
 
 		echo count( $post_comments ) . ' ' . ( count( $post_comments ) == 1
-				? __( 'Comment', 'straightvisions-100' )
-				: __( 'Comments', 'straightvisions-100' )
+				? __( 'Comment', 'sv100' )
+				: __( 'Comments', 'sv100' )
 			);
 		?>
 	</h3>

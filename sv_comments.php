@@ -1,10 +1,10 @@
 <?php
-namespace sv_100;
+namespace sv100;
 
 /**
  * @version         1.00
  * @author			straightvisions
- * @package			sv_100
+ * @package			sv100
  * @copyright		2019 Matthias Bathke
  * @link			https://straightvisions.com
  * @since			1.0
@@ -15,7 +15,7 @@ class sv_comments extends init {
 	public function init() {
 		// Module Info
 		$this->set_module_title( 'SV Comments' );
-		$this->set_module_desc( __( 'This module gives the ability to display comments of the current post/page via the "[sv_comments]" shortcode.', 'straightvisions-100' ) );
+		$this->set_module_desc( __( 'This module gives the ability to display comments of the current post/page via the "[sv_comments]" shortcode.', 'sv100' ) );
 
 		$this->register_scripts();
 	}

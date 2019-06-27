@@ -1,16 +1,16 @@
 /* Comment */
-.sv_100_sv_comments {
+.sv100_sv_comments {
 	margin-top: 50px;
 }
 
-.sv_100_sv_comments h3 {
+.sv100_sv_comments h3 {
 	text-align: center;
 	font-size: 1.4rem;
 	margin-bottom: 1em;
 	position: relative;
 }
 
-.sv_100_sv_comments h3::after {
+.sv100_sv_comments h3::after {
 	display: block;
 	height: 3px;
 	background: rgb( var( --sv-100-color-highlight ) );
@@ -21,31 +21,31 @@
 	margin-right: auto;
 }
 
-.sv_100_sv_comments_comment {
+.sv100_sv_comments_comment {
 	background: rgb( var( --sv-100-color-bg-secondary ) );
 	padding: 30px;
 	display: flex;
 	margin-bottom: 20px;
 }
 
-.sv_100_sv_comments_author,
-.sv_100_sv_comments_author a {
+.sv100_sv_comments_author,
+.sv100_sv_comments_author a {
 	text-decoration: none;
 	color: rgb( var( --sv-100-color-primary ) );
 	transition: .25s ease;
 }
 
-.sv_100_sv_comments_author a:hover {
+.sv100_sv_comments_author a:hover {
 	text-decoration: underline;
 }
 
-.sv_100_sv_comments_author_avatar_wrapper {
+.sv100_sv_comments_author_avatar_wrapper {
 	height: 80px;
 	width: 80px;
 	display: none;
 }
 
-.sv_100_sv_comments_author_avatar {
+.sv100_sv_comments_author_avatar {
 	border: 1px solid rgba( var( --sv-100-color-secondary ), .3 );
 	border-radius: 100%;
 	overflow: hidden;
@@ -53,7 +53,7 @@
 	width: 100%;
 }
 
-.sv_100_sv_comments_author_avatar img {
+.sv100_sv_comments_author_avatar img {
 	max-width: 100%;
 	max-height: 100%;
 	width: 100%;
@@ -61,71 +61,71 @@
 	object-fit: cover;
 }
 
-.sv_100_sv_comments_comment_content_wrapper {
+.sv100_sv_comments_comment_content_wrapper {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 }
 
-.sv_100_sv_comments_author {
+.sv100_sv_comments_author {
 	margin-bottom: 5px;
 	font-weight: bold;
 	font-size: 1.1rem;
 }
 
-.sv_100_sv_comments_comment_date {
+.sv100_sv_comments_comment_date {
 	color: rgb( var( --sv-100-color-secondary ) );
 	font-size: .8rem;
 	margin-bottom: 10px;
 }
 
-.sv_100_sv_comments_comment_content {
+.sv100_sv_comments_comment_content {
 	color: rgb( var( --sv-100-color-secondary ) );
 }
 
 /* Comment Form */
-.sv_100_sv_comments_comment_form {
+.sv100_sv_comments_comment_form {
 	margin-top: 40px;
 }
 
-.sv_100_sv_comments_comment_form .logged-in-as,
-.sv_100_sv_comments_comment_form .comment-notes{
+.sv100_sv_comments_comment_form .logged-in-as,
+.sv100_sv_comments_comment_form .comment-notes{
 	color: rgb( var( --sv-100-color-secondary) );
 	font-size: .8rem;
 }
 
-.sv_100_sv_comments_comment_form .logged-in-as a {
+.sv100_sv_comments_comment_form .logged-in-as a {
 	text-decoration: none;
 	color: rgb( var( --sv-100-color-secondary) );
 	transition: .25s ease;
 }
 
-.sv_100_sv_comments_comment_form .logged-in-as a:hover {
+.sv100_sv_comments_comment_form .logged-in-as a:hover {
 	color: rgb( var( --sv-100-color-highlight ) );
 }
 
-.sv_100_sv_comments_comment_form .comment-form-comment,
-.sv_100_sv_comments_comment_form .comment-form-author,
-.sv_100_sv_comments_comment_form .comment-form-email,
-.sv_100_sv_comments_comment_form .comment-form-url {
+.sv100_sv_comments_comment_form .comment-form-comment,
+.sv100_sv_comments_comment_form .comment-form-author,
+.sv100_sv_comments_comment_form .comment-form-email,
+.sv100_sv_comments_comment_form .comment-form-url {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 }
 
-.sv_100_sv_comments_comment_form .comment-form-comment label,
-.sv_100_sv_comments_comment_form .comment-form-author label,
-.sv_100_sv_comments_comment_form .comment-form-email label,
-.sv_100_sv_comments_comment_form .comment-form-url label {
+.sv100_sv_comments_comment_form .comment-form-comment label,
+.sv100_sv_comments_comment_form .comment-form-author label,
+.sv100_sv_comments_comment_form .comment-form-email label,
+.sv100_sv_comments_comment_form .comment-form-url label {
 	color: rgb( var( --sv-100-color-secondary) );
 	margin-bottom: 5px;
 }
 
-.sv_100_sv_comments_comment_form .comment-form-comment textarea,
-.sv_100_sv_comments_comment_form .comment-form-author input,
-.sv_100_sv_comments_comment_form .comment-form-email input,
-.sv_100_sv_comments_comment_form .comment-form-url input {
+.sv100_sv_comments_comment_form .comment-form-comment textarea,
+.sv100_sv_comments_comment_form .comment-form-author input,
+.sv100_sv_comments_comment_form .comment-form-email input,
+.sv100_sv_comments_comment_form .comment-form-url input {
 	width: 100%;
 	background: rgb( var( --sv-100-color-bg-primary ) );
 	border: none;
@@ -138,12 +138,12 @@
 	max-width: 100%;
 }
 
-.sv_100_sv_content .sv_100_sv_comments_comment_form .comment-form-comment textarea {
+.sv100_sv_content .sv100_sv_comments_comment_form .comment-form-comment textarea {
 	border: 1px solid rgba( 0, 0, 0, .1 );
 	padding: 10px;
 }
 
-.sv_100_sv_content .sv_100_sv_comments_comment_form input[type="submit"] {
+.sv100_sv_content .sv100_sv_comments_comment_form input[type="submit"] {
 	background: rgba( var( --sv-100-color-highlight ), .8 );
 	color: rgb( var( --sv-100-color-contrast ) );
 	border: none;
@@ -153,33 +153,33 @@
 	transition: .25s ease;
 }
 
-.sv_100_sv_content .sv_100_sv_comments_comment_form input[type="submit"]:hover {
+.sv100_sv_content .sv100_sv_comments_comment_form input[type="submit"]:hover {
 	color: rgb( var( --sv-100-color-contrast ) );
 	background: rgba( var( --sv-100-color-highlight ) );
 }
 
 @media ( min-width: 850px ) {
-	.sv_100_sv_comments_author_avatar_wrapper {
+	.sv100_sv_comments_author_avatar_wrapper {
 		display: block;
 	}
 
-	.sv_100_sv_comments_comment_content_wrapper {
+	.sv100_sv_comments_comment_content_wrapper {
 		margin-left: 30px;
 	}
 }
 
 @media ( min-width: 1050px ) {
-	.sv_100_sv_single_with_sidebar .sv_100_sv_comments {
+	.sv100_sv_single_with_sidebar .sv100_sv_comments {
 		padding-right: 0;
 	}
 }
 
 /* Cookies Consent */
-.sv_100_sv_comments_comment_form .comment-form-cookies-consent {
+.sv100_sv_comments_comment_form .comment-form-cookies-consent {
 	display: flex;
 }
 
-.sv_100_sv_comments_comment_form .comment-form-cookies-consent label {
+.sv100_sv_comments_comment_form .comment-form-cookies-consent label {
 	margin-left: 10px;
 	width: calc( 100% - 20px );
 	font-size: .9rem;
