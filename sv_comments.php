@@ -15,7 +15,7 @@ class sv_comments extends init {
 	public function init() {
 		// Module Info
 		$this->set_module_title( 'SV Comments' );
-		$this->set_module_desc( __( 'This module gives the ability to display comments of the current post/page via the "[sv_comments]" shortcode.', 'straightvisions_100' ) );
+		$this->set_module_desc( __( 'This module gives the ability to display comments of the current post/page via the "[sv_comments]" shortcode.', 'straightvisions-100' ) );
 
 		$this->register_scripts();
 	}
