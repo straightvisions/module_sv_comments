@@ -1,15 +1,14 @@
 <div class="<?php echo $this->get_prefix(); ?>">
 	<h3 class="<?php echo $this->get_prefix( 'title' ); ?>">
 		<?php
-		$post_comments = get_comments( array(
-				'post_id' 						=> get_the_ID() ,
-				'status'						=> 'approve'
-		));
+		$post_comments = get_comments(
+			array(
+				'post_id' 	=> get_the_ID(),
+				'status'	=> 'approve'
+			)
+		);
 
-		echo count( $post_comments ) . ' ' . ( count( $post_comments ) == 1
-				? __( 'Comment', 'straightvisions-100' )
-				: __( 'Comments', 'straightvisions-100' )
-			);
+		echo count( $post_comments ) . ' ' . ( count( $post_comments ) == 1 ? __( 'Comment', 'sv100' ) : __( 'Comments', 'sv100' ) );
 		?>
 	</h3>
 
