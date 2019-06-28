@@ -20,7 +20,7 @@ class sv_comments extends init {
 		$this->register_scripts();
 	}
 
-	protected function register_scripts() :sv_comments {
+	protected function register_scripts(): sv_comments {
 		// Register Styles
 		$this->scripts_queue['default']        = static::$scripts
 			->create( $this )
@@ -30,7 +30,7 @@ class sv_comments extends init {
 		return $this;
 	}
 
-	public function load( $settings = array() ) :string {
+	public function load( $settings = array() ): string {
 		$settings								= shortcode_atts(
 			array(
 				'inline'						=> false,
@@ -43,7 +43,7 @@ class sv_comments extends init {
 	}
 
 	// Handles the routing of the templates
-	protected function router( array $settings ) :string {
+	protected function router( array $settings ): string {
 		$template = array(
 			'name'      => 'default',
 			'scripts'   => array(

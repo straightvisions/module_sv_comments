@@ -13,7 +13,7 @@
 .sv100_sv_comments h3::after {
 	display: block;
 	height: 3px;
-	background: rgb( var( --sv-100-color-highlight ) );
+	background: rgb( var( --sv100_sv_color-highlight ) );
 	content: '';
 	margin-top: 15px;
 	max-width: 80px;
@@ -22,7 +22,7 @@
 }
 
 .sv100_sv_comments_comment {
-	background: rgb( var( --sv-100-color-bg-secondary ) );
+	background: rgb( var( --sv100_sv_color-bg-secondary ) );
 	padding: 30px;
 	display: flex;
 	margin-bottom: 20px;
@@ -31,12 +31,13 @@
 .sv100_sv_comments_author,
 .sv100_sv_comments_author a {
 	text-decoration: none;
-	color: rgb( var( --sv-100-color-primary ) );
-	transition: .25s ease;
+	color: rgb( var( --sv100_sv_color-primary ) );
+	transition: color .25s ease;
 }
 
-.sv100_sv_comments_author a:hover {
-	text-decoration: underline;
+.sv100_sv_comments_author a:hover,
+.sv100_sv_comments_author a:focus {
+	color: rgb( var( --sv100_sv_color-highlight ) );
 }
 
 .sv100_sv_comments_author_avatar_wrapper {
@@ -46,7 +47,7 @@
 }
 
 .sv100_sv_comments_author_avatar {
-	border: 1px solid rgba( var( --sv-100-color-secondary ), .3 );
+	border: 1px solid rgba( var( --sv100_sv_color-secondary ), .3 );
 	border-radius: 100%;
 	overflow: hidden;
 	height: 100%;
@@ -75,13 +76,13 @@
 }
 
 .sv100_sv_comments_comment_date {
-	color: rgb( var( --sv-100-color-secondary ) );
+	color: rgb( var( --sv100_sv_color-secondary ) );
 	font-size: .8rem;
 	margin-bottom: 10px;
 }
 
 .sv100_sv_comments_comment_content {
-	color: rgb( var( --sv-100-color-secondary ) );
+	color: rgb( var( --sv100_sv_color-secondary ) );
 }
 
 /* Comment Form */
@@ -91,18 +92,18 @@
 
 .sv100_sv_comments_comment_form .logged-in-as,
 .sv100_sv_comments_comment_form .comment-notes{
-	color: rgb( var( --sv-100-color-secondary) );
+	color: rgb( var( --sv100_sv_color-secondary) );
 	font-size: .8rem;
 }
 
 .sv100_sv_comments_comment_form .logged-in-as a {
 	text-decoration: none;
-	color: rgb( var( --sv-100-color-secondary) );
+	color: rgb( var( --sv100_sv_color-secondary) );
 	transition: .25s ease;
 }
 
 .sv100_sv_comments_comment_form .logged-in-as a:hover {
-	color: rgb( var( --sv-100-color-highlight ) );
+	color: rgb( var( --sv100_sv_color-highlight ) );
 }
 
 .sv100_sv_comments_comment_form .comment-form-comment,
@@ -118,7 +119,7 @@
 .sv100_sv_comments_comment_form .comment-form-author label,
 .sv100_sv_comments_comment_form .comment-form-email label,
 .sv100_sv_comments_comment_form .comment-form-url label {
-	color: rgb( var( --sv-100-color-secondary) );
+	color: rgb( var( --sv100_sv_color-secondary) );
 	margin-bottom: 5px;
 }
 
@@ -127,11 +128,11 @@
 .sv100_sv_comments_comment_form .comment-form-email input,
 .sv100_sv_comments_comment_form .comment-form-url input {
 	width: 100%;
-	background: rgb( var( --sv-100-color-bg-primary ) );
+	background: rgb( var( --sv100_sv_color-bg-primary ) );
 	border: none;
 	border-bottom: 1px solid rgba( 0, 0, 0, .1 );
 	padding-bottom: 5px;
-	color: rgb( var( --sv-100-color-secondary ) );
+	color: rgb( var( --sv100_sv_color-secondary ) );
 	font-family: 'Roboto', sans-serif;
 	outline: none;
 	font-size: .9rem;
@@ -144,8 +145,8 @@
 }
 
 .sv100_sv_content .sv100_sv_comments_comment_form input[type="submit"] {
-	background: rgba( var( --sv-100-color-highlight ), .8 );
-	color: rgb( var( --sv-100-color-contrast ) );
+	background: rgba( var( --sv100_sv_color-highlight ), .8 );
+	color: rgb( var( --sv100_sv_color-contrast ) );
 	border: none;
 	padding: 10px 15px;
 	cursor: pointer;
@@ -154,8 +155,8 @@
 }
 
 .sv100_sv_content .sv100_sv_comments_comment_form input[type="submit"]:hover {
-	color: rgb( var( --sv-100-color-contrast ) );
-	background: rgba( var( --sv-100-color-highlight ) );
+	color: rgb( var( --sv100_sv_color-contrast ) );
+	background: rgba( var( --sv100_sv_color-highlight ) );
 }
 
 @media ( min-width: 850px ) {
