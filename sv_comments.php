@@ -15,9 +15,44 @@
 		public function init() {
 			// Module Info
 			$this->set_module_title( 'SV Comments' );
-			$this->set_module_desc( __( 'This module gives the ability to display comments of the current post/page via the "[sv_comments]" shortcode.', 'sv100' ) );
-	
-			$this->register_scripts();
+			$this->set_module_desc( __( 'This module gives the ability to display comments on posts.', 'sv100' ) );
+			
+			// Section Info
+			$this->set_section_title( __( 'Comments', 'sv100' ) )
+				 ->set_section_desc( __( 'Settings', 'sv100' ) )
+				 ->set_section_type( 'settings' )
+				 ->set_section_template_path( $this->get_path( 'lib/backend/tpl/settings.php' ) );
+			
+			$this->get_root()->add_section( $this );
+			
+			$this->load_settings()->register_scripts();
+		}
+		
+		protected function load_settings(): sv_comments {
+			// Text Settings
+			$this->get_settings_component( 'font_family','font_family' );
+			$this->get_settings_component( 'font_size','font_size', 16 );
+			$this->get_settings_component( 'text_color','text_color', '#85868c' );
+			$this->get_settings_component( 'line_height','line_height', 23 );
+			
+			// Title Settings
+			$this->get_settings_component( 'font_family_title','font_family' );
+			$this->get_settings_component( 'font_size_title','font_size', 32 );
+			$this->get_settings_component( 'text_color_title','text_color', '#1e1f22' );
+			$this->get_settings_component( 'line_height_title','line_height', 48 );
+			
+			// Color Settings
+			$this->get_settings_component( 'bg_color','background_color', '#f7f7f7' );
+			$this->get_settings_component( 'highlight_color','highlight_color', '#358ae9' );
+			$this->s['author_color'] =
+				$this->get_setting()
+					 ->set_ID( 'author_color' )
+					 ->set_title( __( 'Author Color', 'sv100' ) )
+					 ->set_description( __( 'This color is used for the author name.', 'sv100' ) )
+					 ->set_default_value( '#1e1f22' )
+					 ->load_type( 'color' );
+			
+			return $this;
 		}
 	
 		protected function register_scripts(): sv_comments {
@@ -26,6 +61,12 @@
 				->create( $this )
 				->set_ID( 'default' )
 				->set_path( 'lib/frontend/css/default.css' );
+			
+			$this->scripts_queue['inline_config'] =
+				static::$scripts->create( $this )
+								->set_ID( 'inline_config' )
+								->set_path( 'lib/frontend/css/config.php' )
+								->set_inline( true );
 	
 			return $this;
 		}
@@ -57,9 +98,12 @@
 		// Loads the templates
 		protected function load_template( array $template, array $settings ) :string {
 			ob_start();
+			
 			foreach ( $template['scripts'] as $script ) {
 				$script->set_is_enqueued();
 			}
+			
+			$this->scripts_queue['inline_config']->set_is_enqueued();
 	
 			// Loads the template
 			include ( $this->get_path('lib/frontend/tpl/' . $template['name'] . '.php' ) );
