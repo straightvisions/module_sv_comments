@@ -13,19 +13,16 @@
 	
 	class sv_comments extends init {
 		public function init() {
-			// Module Info
-			$this->set_module_title( 'SV Comments' );
-			$this->set_module_desc( __( 'This module gives the ability to display comments on posts.', 'sv100' ) );
-			
-			// Section Info
-			$this->set_section_title( __( 'Comments', 'sv100' ) )
+			$this->set_module_title( 'SV Comments' )
+				 ->set_module_desc( __( 'This module gives the ability to display comments on posts.', 'sv100' ) )
+				 ->load_settings()
+				 ->register_scripts()
+				 ->set_section_title( __( 'Comments', 'sv100' ) )
 				 ->set_section_desc( __( 'Settings', 'sv100' ) )
 				 ->set_section_type( 'settings' )
-				 ->set_section_template_path( $this->get_path( 'lib/backend/tpl/settings.php' ) );
-			
-			$this->get_root()->add_section( $this );
-			
-			$this->load_settings()->register_scripts();
+				 ->set_section_template_path( $this->get_path( 'lib/backend/tpl/settings.php' ) )
+				 ->get_root()
+				 ->add_section( $this );
 		}
 		
 		protected function load_settings(): sv_comments {
@@ -44,6 +41,7 @@
 			// Color Settings
 			$this->get_settings_component( 'bg_color','background_color', '#f7f7f7' );
 			$this->get_settings_component( 'highlight_color','highlight_color', '#358ae9' );
+			
 			$this->s['author_color'] =
 				$this->get_setting()
 					 ->set_ID( 'author_color' )
@@ -57,16 +55,12 @@
 	
 		protected function register_scripts(): sv_comments {
 			// Register Styles
-			$this->scripts_queue['default']        = static::$scripts
-				->create( $this )
-				->set_ID( 'default' )
-				->set_path( 'lib/frontend/css/default.css' );
+			$this->get_script( 'default' )
+				 ->set_path( 'lib/frontend/css/default.css' );
 			
-			$this->scripts_queue['inline_config'] =
-				static::$scripts->create( $this )
-								->set_ID( 'inline_config' )
-								->set_path( 'lib/frontend/css/config.php' )
-								->set_inline( true );
+			$this->get_script( 'inline_config' )
+				 ->set_path( 'lib/frontend/css/config.php' )
+				 ->set_inline( true );
 	
 			return $this;
 		}
@@ -88,7 +82,7 @@
 			$template = array(
 				'name'      => 'default',
 				'scripts'   => array(
-					$this->scripts_queue[ 'default' ]->set_inline( $settings['inline'] ),
+					$this->get_script( 'default' )->set_inline( $settings['inline'] ),
 				),
 			);
 	
@@ -103,7 +97,7 @@
 				$script->set_is_enqueued();
 			}
 			
-			$this->scripts_queue['inline_config']->set_is_enqueued();
+			$this->get_script( 'inline_config' )->set_is_enqueued();
 	
 			// Loads the template
 			include ( $this->get_path('lib/frontend/tpl/' . $template['name'] . '.php' ) );
