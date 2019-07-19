@@ -18,7 +18,7 @@
 				 ->load_settings()
 				 ->register_scripts()
 				 ->set_section_title( __( 'Comments', 'sv100' ) )
-				 ->set_section_desc( __( 'Texts & Colors', 'sv100' ) )
+				 ->set_section_desc( __( 'Text & Color settings', 'sv100' ) )
 				 ->set_section_type( 'settings' )
 				 ->set_section_template_path( $this->get_path( 'lib/backend/tpl/settings.php' ) )
 				 ->get_root()
