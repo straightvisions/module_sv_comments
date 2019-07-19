@@ -14,11 +14,11 @@
 	class sv_comments extends init {
 		public function init() {
 			$this->set_module_title( 'SV Comments' )
-				 ->set_module_desc( __( 'This module gives the ability to display comments on posts.', 'sv100' ) )
+				 ->set_module_desc( __( 'Display and manage comments in your posts.', 'sv100' ) )
 				 ->load_settings()
 				 ->register_scripts()
 				 ->set_section_title( __( 'Comments', 'sv100' ) )
-				 ->set_section_desc( __( 'Settings', 'sv100' ) )
+				 ->set_section_desc( __( 'Texts & Colors', 'sv100' ) )
 				 ->set_section_type( 'settings' )
 				 ->set_section_template_path( $this->get_path( 'lib/backend/tpl/settings.php' ) )
 				 ->get_root()
