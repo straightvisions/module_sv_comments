@@ -29,25 +29,25 @@
 			// Text Settings
 			$this->get_settings_component( 'font_family','font_family' );
 			$this->get_settings_component( 'font_size','font_size', 16 );
-			$this->get_settings_component( 'text_color','text_color', '#85868c' );
+			$this->get_settings_component( 'text_color','text_color', '#828282' );
 			$this->get_settings_component( 'line_height','line_height', 23 );
 			
 			// Title Settings
 			$this->get_settings_component( 'font_family_title','font_family' );
 			$this->get_settings_component( 'font_size_title','font_size', 32 );
-			$this->get_settings_component( 'text_color_title','text_color', '#1e1f22' );
+			$this->get_settings_component( 'text_color_title','text_color', '#1e1e1e' );
 			$this->get_settings_component( 'line_height_title','line_height', 48 );
 			
 			// Color Settings
-			$this->get_settings_component( 'bg_color','background_color', '#f7f7f7' );
-			$this->get_settings_component( 'highlight_color','highlight_color', '#358ae9' );
+			$this->get_settings_component( 'bg_color','background_color', '#f5f5f5' );
+			$this->get_settings_component( 'highlight_color','highlight_color', '#328ce6' );
 			
 			$this->s['author_color'] =
 				$this->get_setting()
 					 ->set_ID( 'author_color' )
 					 ->set_title( __( 'Author Color', 'sv100' ) )
 					 ->set_description( __( 'This color is used for the author name.', 'sv100' ) )
-					 ->set_default_value( '#1e1f22' )
+					 ->set_default_value( '#1e1e1e' )
 					 ->load_type( 'color' );
 			
 			return $this;
