@@ -57,7 +57,10 @@
 .sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-author input:focus,
 .sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-email input:focus,
 .sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-url input:focus,
-.sv100_sv_comments .sv100_sv_comments_comment_form input[type="submit"] {
+.sv100_sv_comments .sv100_sv_comments_comment_form input[type="submit"],
+.sv100_sv_comments_pagination .page-numbers,
+.sv100_sv_comments_pagination .page-numbers:hover,
+.sv100_sv_comments_pagination .page-numbers:focus {
 	color: <?php echo $text_color; ?>;
 }
 
@@ -109,4 +112,8 @@
 
 .sv100_sv_comments .sv100_sv_comments_comment_form input[type="checkbox"]::before {
 	background-color: <?php echo $text_color_title; ?>;
+}
+
+.sv100_sv_comments_pagination .page-numbers::after {
+	background-color: <?php echo $highlight_color; ?>;
 }

@@ -48,7 +48,9 @@
 		$i++;
 	}
 	?>
-
+	<div class="<?php echo $this->get_prefix( 'pagination' ); ?>">
+		<?php echo paginate_comments_links(); ?>
+	</div>
 	<div class="<?php echo $this->get_prefix( 'comment_form' ); ?>">
 		<?php comment_form(); ?>
 	</div>
