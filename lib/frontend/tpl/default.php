@@ -14,7 +14,6 @@
 	</h3>
 
 	<?php
-	/* @todo Custom Comments Loop (Muss raus)
 	$i = 0;
 
 	foreach ( $comments as $comment ) {
@@ -49,9 +48,6 @@
     <?php
 		$i++;
 	}
- 	**/
-	
-	//@todo Diese funktion nutzen und custom walker einbauen -> wp_list_comments()
 	?>
 
 	<div class="<?php echo $this->get_prefix( 'comment_form' ); ?>">
