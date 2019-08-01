@@ -13,6 +13,7 @@
 	</h3>
 
 	<?php
+	// @todo Custom Comments Loop, muss durch wp_list_comments() ersetzt werden.
 	$i = 0;
 
 	foreach ( $post_comments as $post_comment ) {
@@ -47,6 +48,7 @@
     <?php
 		$i++;
 	}
+	// Ende der custom loop
 	?>
 	<div class="<?php echo $this->get_prefix( 'pagination' ); ?>">
 		<?php echo paginate_comments_links(); ?>
