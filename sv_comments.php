@@ -97,8 +97,11 @@
 				$script->set_is_enqueued();
 			}
 			
+			// WP Comment Reply Script
+			wp_enqueue_script( 'comment-reply' );
+			
 			$this->get_script( 'inline_config' )->set_is_enqueued();
-	
+			
 			// Loads the template
 			include ( $this->get_path('lib/frontend/tpl/' . $template['name'] . '.php' ) );
 			$output							        = ob_get_contents();
