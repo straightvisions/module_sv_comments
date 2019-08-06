@@ -97,10 +97,10 @@
 				$script->set_is_enqueued();
 			}
 			
+			$this->get_script( 'inline_config' )->set_is_enqueued();
+			
 			// WP Comment Reply Script
 			wp_enqueue_script( 'comment-reply' );
-			
-			$this->get_script( 'inline_config' )->set_is_enqueued();
 			
 			// Loads the template
 			include ( $this->get_path('lib/frontend/tpl/' . $template['name'] . '.php' ) );
@@ -108,5 +108,10 @@
 			ob_end_clean();
 	
 			return $output;
+		}
+		
+		public function custom_comment_list( $comment, $args, $depth ) {
+			// Loads the comment template
+			include ( $this->get_path('lib/frontend/tpl/comment.php' ) );
 		}
 	}

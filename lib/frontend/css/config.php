@@ -43,21 +43,21 @@
 
 .sv100_sv_comments a,
 .sv100_sv_comments .sv100_sv_comments_comment a,
-.sv100_sv_comments .sv100_sv_comments_comment_form a,
+.sv100_sv_comments .comment-form a,
 .sv100_sv_comments .sv100_sv_comments_comment,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-comment textarea,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-author input,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-email input,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-url input,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-comment textarea:hover,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-author input:hover,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-email input:hover,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-url input:hover,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-comment textarea:focus,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-author input:focus,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-email input:focus,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-url input:focus,
-.sv100_sv_comments .sv100_sv_comments_comment_form input[type="submit"],
+.sv100_sv_comments .comment-form .comment-form-comment textarea,
+.sv100_sv_comments .comment-form .comment-form-author input,
+.sv100_sv_comments .comment-form .comment-form-email input,
+.sv100_sv_comments .comment-form .comment-form-url input,
+.sv100_sv_comments .comment-form .comment-form-comment textarea:hover,
+.sv100_sv_comments .comment-form .comment-form-author input:hover,
+.sv100_sv_comments .comment-form .comment-form-email input:hover,
+.sv100_sv_comments .comment-form .comment-form-url input:hover,
+.sv100_sv_comments .comment-form .comment-form-comment textarea:focus,
+.sv100_sv_comments .comment-form .comment-form-author input:focus,
+.sv100_sv_comments .comment-form .comment-form-email input:focus,
+.sv100_sv_comments .comment-form .comment-form-url input:focus,
+.sv100_sv_comments .comment-form input[type="submit"],
 .sv100_sv_comments_pagination .page-numbers,
 .sv100_sv_comments_pagination .page-numbers:hover,
 .sv100_sv_comments_pagination .page-numbers:focus {
@@ -68,10 +68,10 @@
 .sv100_sv_comments a:focus,
 .sv100_sv_comments .sv100_sv_comments_comment a:hover,
 .sv100_sv_comments .sv100_sv_comments_comment a:focus,
-.sv100_sv_comments .sv100_sv_comments_comment_form a:hover,
-.sv100_sv_comments .sv100_sv_comments_comment_form a:focus,
-.sv100_sv_comments .sv100_sv_comments_comment_form input[type="submit"]:hover,
-.sv100_sv_comments .sv100_sv_comments_comment_form input[type="submit"]:focus {
+.sv100_sv_comments .comment-form a:hover,
+.sv100_sv_comments .comment-form a:focus,
+.sv100_sv_comments .comment-form input[type="submit"]:hover,
+.sv100_sv_comments .comment-form input[type="submit"]:focus {
 	color: <?php echo $highlight_color; ?>;
 }
 
@@ -92,11 +92,11 @@
 }
 
 .sv100_sv_comments .sv100_sv_comments_comment,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-comment textarea,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-author input,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-email input,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-url input,
-.sv100_sv_comments .sv100_sv_comments_comment_form input[type="submit"] {
+.sv100_sv_comments .comment-form .comment-form-comment textarea,
+.sv100_sv_comments .comment-form .comment-form-author input,
+.sv100_sv_comments .comment-form .comment-form-email input,
+.sv100_sv_comments .comment-form .comment-form-url input,
+.sv100_sv_comments .comment-form input[type="submit"] {
 	background-color: <?php echo $bg_color; ?>;
 }
 
@@ -106,11 +106,11 @@
 	font-weight: bold;
 }
 
-.sv100_sv_comments .sv100_sv_comments_comment_form input[type="checkbox"] {
+.sv100_sv_comments .comment-form input[type="checkbox"] {
 	border-color: <?php echo $text_color_title; ?>;
 }
 
-.sv100_sv_comments .sv100_sv_comments_comment_form input[type="checkbox"]::before {
+.sv100_sv_comments .comment-form input[type="checkbox"]::before {
 	background-color: <?php echo $text_color_title; ?>;
 }
 

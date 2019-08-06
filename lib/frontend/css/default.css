@@ -15,14 +15,14 @@
 
 .sv100_sv_comments h3,
 .sv100_sv_comments .sv100_sv_comments_title,
-.sv100_sv_comments .sv100_sv_comments_comment_form h3 {
+.sv100_sv_comments .comment-form h3 {
 	text-align: center;
 	margin-bottom: 1em;
 	position: relative;
 }
 
 .sv100_sv_comments h3::after,
-.sv100_sv_comments .sv100_sv_comments_comment_form h3::after {
+.sv100_sv_comments .comment-form h3::after {
 	display: block;
 	height: 3px;
 	content: '';
@@ -41,6 +41,7 @@
 .sv100_sv_comments .sv100_sv_comments_author,
 .sv100_sv_comments .sv100_sv_comments_author a {
 	text-decoration: none;
+	word-break: break-all;
 	transition: color .25s ease;
 }
 
@@ -84,35 +85,41 @@
 }
 
 /* Comment Form */
-.sv100_sv_comments .sv100_sv_comments_comment_form {
+.sv100_sv_comments .comment-form {
 	margin-top: 40px;
 }
 
-.sv100_sv_comments .sv100_sv_comments_comment_form .logged-in-as,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-notes{
+.sv100_sv_comments .comment-form .logged-in-as,
+.sv100_sv_comments .comment-form .comment-notes{
 	font-size: .8rem;
 }
 
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-comment,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-author,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-email,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-url {
+.sv100_sv_comments .comment-respond small {
+	display: block;
+	font-size: .75em;
+	line-height: 130%;
+}
+
+.sv100_sv_comments .comment-form .comment-form-comment,
+.sv100_sv_comments .comment-form .comment-form-author,
+.sv100_sv_comments .comment-form .comment-form-email,
+.sv100_sv_comments .comment-form .comment-form-url {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 }
 
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-comment label,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-author label,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-email label,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-url label {
+.sv100_sv_comments .comment-form .comment-form-comment label,
+.sv100_sv_comments .comment-form .comment-form-author label,
+.sv100_sv_comments .comment-form .comment-form-email label,
+.sv100_sv_comments .comment-form .comment-form-url label {
 	margin-bottom: 5px;
 }
 
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-comment textarea,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-author input,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-email input,
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-url input {
+.sv100_sv_comments .comment-form .comment-form-comment textarea,
+.sv100_sv_comments .comment-form .comment-form-author input,
+.sv100_sv_comments .comment-form .comment-form-email input,
+.sv100_sv_comments .comment-form .comment-form-url input {
 	width: 100%;
 	outline: none;
 	font-size: .9rem;
@@ -120,11 +127,11 @@
 	border: none;
 }
 
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-comment textarea {
+.sv100_sv_comments .comment-form .comment-form-comment textarea {
 	padding: 10px;
 }
 
-.sv100_sv_comments .sv100_sv_comments_comment_form input[type="submit"] {
+.sv100_sv_comments .comment-form input[type="submit"] {
 	border: none;
 	padding: 10px 15px;
 	cursor: pointer;
@@ -149,11 +156,11 @@
 }
 
 /* Cookies Consent */
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-cookies-consent {
+.sv100_sv_comments .comment-form .comment-form-cookies-consent {
 	display: flex;
 }
 
-.sv100_sv_comments .sv100_sv_comments_comment_form .comment-form-cookies-consent label {
+.sv100_sv_comments .comment-form .comment-form-cookies-consent label {
 	margin-left: 10px;
 	width: calc( 100% - 20px );
 	font-size: .9rem;

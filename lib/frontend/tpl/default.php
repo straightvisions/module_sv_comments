@@ -12,28 +12,9 @@
 		?>
 	</h3>
 
-	<?php
-	// @todo Custom Comments Loop, muss durch wp_list_comments() ersetzt werden.
-
-	/*
-	 *
-	 * https://gist.github.com/georgiecel/9445357
-	 *https://digwp.com/2010/02/custom-comments-html-output/
-	 * https://lab-dh.straightvisions.com/wp-admin/themes.php?page=themecheck
-	 */
-    echo wp_list_comments();
-    
-    
-	// Ende der custom loop
-	?>
+	<?php echo wp_list_comments( array( 'callback' => array( $this, 'custom_comment_list' ) ) ); ?>
 	<div class="<?php echo $this->get_prefix( 'pagination' ); ?>">
 		<?php echo paginate_comments_links(); ?>
 	</div>
-	<div class="<?php echo $this->get_prefix( 'comment_form' ); ?>">
-		<?php comment_form(); ?>
-	</div>
+	<?php comment_form(); ?>
 </div>
-<?php
-echo "------------------------------ TARGET LOOK --------------------------------";
-include(__DIR__.'/default_bkp.php');
-?>
