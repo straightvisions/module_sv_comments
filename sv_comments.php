@@ -13,7 +13,7 @@
 	
 	class sv_comments extends init {
 		public function init() {
-			$this->set_module_title( 'SV Comments' )
+			$this->set_module_title( __( 'SV Comments', 'sv100' ) )
 				 ->set_module_desc( __( 'Display and manage comments in your posts.', 'sv100' ) )
 				 ->load_settings()
 				 ->register_scripts()
