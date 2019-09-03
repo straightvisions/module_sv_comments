@@ -41,7 +41,6 @@
 .sv100_sv_comments .sv100_sv_comments_author,
 .sv100_sv_comments .sv100_sv_comments_author a {
 	text-decoration: none;
-	word-break: break-all;
 	transition: color .25s ease;
 }
 
