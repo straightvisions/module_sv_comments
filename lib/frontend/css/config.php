@@ -1,4 +1,15 @@
 <?php
+	// Fetches all settings and creates new variables with the setting ID as name and setting data as value.
+	// This reduces the lines of code for the needed setting values.
+	foreach ( $script->get_parent()->get_settings() as $setting ) {
+		${ $setting->get_ID() } = $setting->run_type()->get_data();
+		
+		// If setting is color, it gets the value in the RGB-Format
+		if ( $setting->get_type() === 'setting_color' ) {
+			${ $setting->get_ID() } = $setting->get_rgb( ${ $setting->get_ID() } );
+		}
+	}
+	
 	// Text Settings
 	$font_family				= $script->get_parent()->get_setting( 'font_family' )->run_type()->get_data();
 	
@@ -7,11 +18,7 @@
 	} else {
 		$font                     = false;
 	}
-	
-	$font_size					= $script->get_parent()->get_setting( 'font_size' )->run_type()->get_data();
-	$text_color					= $script->get_parent()->get_setting( 'text_color' )->run_type()->get_data();
-	$line_height				= $script->get_parent()->get_setting( 'line_height' )->run_type()->get_data();
-	
+
 	// Title Settings
 	$font_family_title			= $script->get_parent()->get_setting( 'font_family_title' )->run_type()->get_data();
 	
@@ -20,15 +27,6 @@
 	} else {
 		$font_title				= false;
 	}
-	
-	$font_size_title			= $script->get_parent()->get_setting( 'font_size_title' )->run_type()->get_data();
-	$text_color_title			= $script->get_parent()->get_setting( 'text_color_title' )->run_type()->get_data();
-	$line_height_title			= $script->get_parent()->get_setting( 'line_height_title' )->run_type()->get_data();
-	
-	// Color Settings
-	$bg_color					= $script->get_parent()->get_setting( 'bg_color' )->run_type()->get_data();
-	$highlight_color			= $script->get_parent()->get_setting( 'highlight_color' )->run_type()->get_data();
-	$author_color				= $script->get_parent()->get_setting( 'author_color' )->run_type()->get_data();
 ?>
 
 .sv100_sv_comments,
@@ -37,7 +35,7 @@
 	font-family: <?php echo ( $font ? '"' . $font['family'] . '", ' : '' ); ?>sans-serif;
 	font-weight: <?php echo ( $font ? $font['weight'] : '400' ); ?>;
 	font-size: <?php echo $font_size; ?>px;
-	color: <?php echo $text_color; ?>;
+	color: rgba(<?php echo $text_color; ?>);
 	line-height: <?php echo $line_height; ?>px;
 }
 
@@ -61,7 +59,7 @@
 .sv100_sv_comments_pagination .page-numbers,
 .sv100_sv_comments_pagination .page-numbers:hover,
 .sv100_sv_comments_pagination .page-numbers:focus {
-	color: <?php echo $text_color; ?>;
+	color: rgba(<?php echo $text_color; ?>);
 }
 
 .sv100_sv_comments a:hover,
@@ -72,23 +70,23 @@
 .sv100_sv_comments .comment-form a:focus,
 .sv100_sv_comments .comment-form input[type="submit"]:hover,
 .sv100_sv_comments .comment-form input[type="submit"]:focus {
-	color: <?php echo $highlight_color; ?>;
+	color: rgba(<?php echo $highlight_color; ?>);
 }
 
 .sv100_sv_comments h3 {
 	font-family: <?php echo ( $font_title ? '"' . $font_title['family'] . '", ' : '' ); ?>sans-serif;
 	font-weight: <?php echo ( $font_title ? $font_title['weight'] : '400' ); ?>;
 	font-size: <?php echo $font_size_title; ?>px;
-	color: <?php echo $text_color_title; ?>;
+	color: rgba(<?php echo $text_color_title; ?>);
 	line-height: <?php echo $line_height_title; ?>px;
 }
 
 .sv100_sv_comments h3::after {
-	background-color: <?php echo $highlight_color; ?>;
+	background-color: rgba(<?php echo $highlight_color; ?>);
 }
 
 .sv100_sv_comments .comment-form label {
-	color: <?php echo $text_color_title; ?>;
+	color: rgba(<?php echo $text_color_title; ?>);
 }
 
 .sv100_sv_comments .sv100_sv_comments_comment,
@@ -97,23 +95,23 @@
 .sv100_sv_comments .comment-form .comment-form-email input,
 .sv100_sv_comments .comment-form .comment-form-url input,
 .sv100_sv_comments .comment-form input[type="submit"] {
-	background-color: <?php echo $bg_color; ?>;
+	background-color: rgba(<?php echo $bg_color; ?>);
 }
 
 .sv100_sv_comments .sv100_sv_comments_author,
 .sv100_sv_comments .sv100_sv_comments_author a {
-	color: <?php echo $author_color; ?>;
+	color: rgba(<?php echo $author_color; ?>);
 	font-weight: bold;
 }
 
 .sv100_sv_comments .comment-form input[type="checkbox"] {
-	border-color: <?php echo $text_color_title; ?>;
+	border-color: rgba(<?php echo $text_color_title; ?>);
 }
 
 .sv100_sv_comments .comment-form input[type="checkbox"]::before {
-	background-color: <?php echo $text_color_title; ?>;
+	background-color: rgba(<?php echo $text_color_title; ?>);
 }
 
 .sv100_sv_comments_pagination .page-numbers::after {
-	background-color: <?php echo $highlight_color; ?>;
+	background-color: rgba(<?php echo $highlight_color; ?>);
 }
