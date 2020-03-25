@@ -2,7 +2,7 @@
 	namespace sv100;
 	
 	/**
-	 * @version         4.021
+	 * @version         4.022
 	 * @author			straightvisions GmbH
 	 * @package			sv100
 	 * @copyright		2019 straightvisions GmbH
@@ -27,20 +27,64 @@
 		
 		protected function load_settings(): sv_comments {
 			// Text Settings
-			$this->get_settings_component( 'font_family','font_family' );
-			$this->get_settings_component( 'font_size','font_size', 16 );
-			$this->get_settings_component( 'text_color','text_color', '#828282' );
-			$this->get_settings_component( 'line_height','line_height', 23 );
+			$this->get_setting( 'font_family' )
+				 ->set_title( __( 'Font Family', 'sv100' ) )
+				 ->set_description( __( 'Choose a font for your text.', 'sv100' ) )
+				 ->set_options( $this->get_module( 'sv_webfontloader' )->get_font_options() )
+				 ->load_type( 'select' );
+
+			$this->get_setting( 'font_size' )
+				 ->set_title( __( 'Font Size', 'sv100' ) )
+				 ->set_description( __( 'Font Size in pixel.', 'sv100' ) )
+				 ->set_default_value( 16 )
+				 ->load_type( 'number' );
+
+			$this->get_setting( 'line_height' )
+				 ->set_title( __( 'Line Height', 'sv100' ) )
+				 ->set_description( __( 'Set line height as multiplier or with a unit.', 'sv100' ) )
+				 ->set_default_value( '23px' )
+				 ->load_type( 'text' );
+
+			$this->get_setting( 'text_color' )
+				 ->set_title( __( 'Text Color', 'sv100' ) )
+				 ->set_default_value( '#828282' )
+				 ->load_type( 'color' );
 			
 			// Title Settings
-			$this->get_settings_component( 'font_family_title','font_family' );
-			$this->get_settings_component( 'font_size_title','font_size', 32 );
-			$this->get_settings_component( 'text_color_title','text_color', '#1e1e1e' );
-			$this->get_settings_component( 'line_height_title','line_height', 48 );
+			$this->get_setting( 'font_family_title' )
+				 ->set_title( __( 'Font Family', 'sv100' ) )
+				 ->set_description( __( 'Choose a font for your text.', 'sv100' ) )
+				 ->set_options( $this->get_module( 'sv_webfontloader' )->get_font_options() )
+				 ->load_type( 'select' );
+
+			$this->get_setting( 'font_size_title' )
+				 ->set_title( __( 'Font Size', 'sv100' ) )
+				 ->set_description( __( 'Font Size in pixel.', 'sv100' ) )
+				 ->set_default_value( 32 )
+				 ->load_type( 'number' );
+
+			$this->get_setting( 'line_height_title' )
+				 ->set_title( __( 'Line Height', 'sv100' ) )
+				 ->set_description( __( 'Set line height as multiplier or with a unit.', 'sv100' ) )
+				 ->set_default_value( '48px' )
+				 ->load_type( 'text' );
+
+			$this->get_setting( 'text_color_title' )
+				 ->set_title( __( 'Text Color', 'sv100' ) )
+				 ->set_default_value( '#1e1e1e' )
+				 ->load_type( 'color' );
 			
 			// Color Settings
-			$this->get_settings_component( 'bg_color','background_color', '#f5f5f5' );
-			$this->get_settings_component( 'highlight_color','highlight_color', '#328ce6' );
+			$this->get_setting( 'bg_color' )
+				 ->set_title( __( 'Background Color', 'sv100' ) )
+				 ->set_default_value( '#f5f5f5' )
+				 ->load_type( 'color' );
+
+			$this->get_setting( 'highlight_color' )
+				 ->set_title( __( 'Highlight Color', 'sv100' ) )
+				 ->set_description( __( 'This color is used for highlighting elements, like links on hover/focus.', 'sv100' ) )
+				 ->set_default_value( '#328ce6' )
+				 ->load_type( 'color' );
 			
 			$this->s['author_color'] =
 				$this->get_setting()
