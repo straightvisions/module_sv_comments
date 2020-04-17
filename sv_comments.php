@@ -14,15 +14,16 @@
 	class sv_comments extends init {
 		public function init() {
 			$this->set_module_title( __( 'SV Comments', 'sv100' ) )
-				 ->set_module_desc( __( 'Display and manage comments in your posts.', 'sv100' ) )
-				 ->load_settings()
-				 ->register_scripts()
-				 ->set_section_title( __( 'Comments', 'sv100' ) )
-				 ->set_section_desc( __( 'Text & Color settings', 'sv100' ) )
-				 ->set_section_type( 'settings' )
-				 ->set_section_template_path( $this->get_path( 'lib/backend/tpl/settings.php' ) )
-				 ->get_root()
-				 ->add_section( $this );
+				->set_module_desc( __( 'Display and manage comments in your posts.', 'sv100' ) )
+				->load_settings()
+				->register_scripts()
+				->set_section_title( __( 'Comments', 'sv100' ) )
+				->set_section_desc( __( 'Text & Color settings', 'sv100' ) )
+				->set_section_type( 'settings' )
+				->set_section_template_path( $this->get_path( 'lib/backend/tpl/settings.php' ) )
+				->set_section_order(34)
+				->get_root()
+				->add_section( $this );
 		}
 		
 		protected function load_settings(): sv_comments {
