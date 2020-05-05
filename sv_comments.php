@@ -100,10 +100,10 @@
 	
 		protected function register_scripts(): sv_comments {
 			// Register Styles
-			$this->get_script( 'default' )
-				 ->set_path( 'lib/frontend/css/default.css' );
+			$this->get_script( 'common' )
+				 ->set_path( 'lib/frontend/css/common.css' );
 			
-			$this->get_script( 'inline_config' )
+			$this->get_script( 'config' )
 				 ->set_path( 'lib/frontend/css/config.php' )
 				 ->set_inline( true );
 	
@@ -127,7 +127,7 @@
 			$template = array(
 				'name'      => 'default',
 				'scripts'   => array(
-					$this->get_script( 'default' )->set_inline( $settings['inline'] ),
+					$this->get_script( 'common' )->set_inline( $settings['inline'] ),
 				),
 			);
 	
@@ -142,7 +142,7 @@
 				$script->set_is_enqueued();
 			}
 			
-			$this->get_script( 'inline_config' )->set_is_enqueued();
+			$this->get_script( 'config' )->set_is_enqueued();
 			
 			// WP Comment Reply Script
 			wp_enqueue_script( 'comment-reply' );
