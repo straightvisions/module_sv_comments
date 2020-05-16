@@ -119,7 +119,7 @@
 				$this->get_module_name()
 			);
 	
-			return comments_open() ? $this->router( $settings ) : '';
+			return $this->router( $settings );
 		}
 	
 		// Handles the routing of the templates

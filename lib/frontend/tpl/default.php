@@ -18,5 +18,5 @@
 	<div class="<?php echo $this->get_prefix( 'pagination' ); ?>">
 		<?php echo paginate_comments_links(); ?>
 	</div>
-	<?php comment_form(); ?>
+	<?php comments_open() ? comment_form() : ''; ?>
 </div>
