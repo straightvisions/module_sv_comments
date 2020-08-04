@@ -1,5 +1,5 @@
 <?php if(count( $post_comments ) > 0 || comments_open()){ ?>
-<div class="<?php echo $this->get_prefix(); ?>">
+<div class="<?php echo $this->get_prefix(); ?>" id="comments">
 	<h3 class="<?php echo $this->get_prefix( 'title' ); ?>">
 		<?php
 		$post_comments = get_comments(
