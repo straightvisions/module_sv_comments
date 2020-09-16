@@ -37,7 +37,7 @@
 			$this->get_setting( 'font' )
 				->set_title( __( 'Font Family', 'sv100' ) )
 				->set_description( __( 'Choose a font for your text.', 'sv100' ) )
-				->set_options( $this->get_module( 'sv_webfontloader' )->get_font_options() )
+				->set_options( $this->get_module( 'sv_webfontloader' ) ? $this->get_module( 'sv_webfontloader' )->get_font_options() : array('' => __('Please activate module SV Webfontloader for this Feature.', 'sv100')) )
 				->set_is_responsive(true)
 				->load_type( 'select' );
 
@@ -86,7 +86,7 @@
 			$this->get_setting( 'font_title' )
 				->set_title( __( 'Font Family', 'sv100' ) )
 				->set_description( __( 'Choose a font for your text.', 'sv100' ) )
-				->set_options( $this->get_module( 'sv_webfontloader' )->get_font_options() )
+				->set_options( $this->get_module( 'sv_webfontloader' ) ? $this->get_module( 'sv_webfontloader' )->get_font_options() : array('' => __('Please activate module SV Webfontloader for this Feature.', 'sv100')) )
 				->set_is_responsive(true)
 				->load_type( 'select' );
 
@@ -124,7 +124,7 @@
 			$this->get_setting( 'font_author' )
 				->set_title( __( 'Font Family', 'sv100' ) )
 				->set_description( __( 'Choose a font for your text.', 'sv100' ) )
-				->set_options( $this->get_module( 'sv_webfontloader' )->get_font_options() )
+				->set_options( $this->get_module( 'sv_webfontloader' ) ? $this->get_module( 'sv_webfontloader' )->get_font_options() : array('' => __('Please activate module SV Webfontloader for this Feature.', 'sv100')) )
 				->set_is_responsive(true)
 				->load_type( 'select' );
 
@@ -151,7 +151,7 @@
 			$this->get_setting( 'font_date' )
 				->set_title( __( 'Font Family', 'sv100' ) )
 				->set_description( __( 'Choose a font for your text.', 'sv100' ) )
-				->set_options( $this->get_module( 'sv_webfontloader' )->get_font_options() )
+				->set_options( $this->get_module( 'sv_webfontloader' ) ? $this->get_module( 'sv_webfontloader' )->get_font_options() : array('' => __('Please activate module SV Webfontloader for this Feature.', 'sv100')) )
 				->set_is_responsive(true)
 				->load_type( 'select' );
 
@@ -178,7 +178,7 @@
 			$this->get_setting( 'font_reply' )
 				->set_title( __( 'Font Family', 'sv100' ) )
 				->set_description( __( 'Choose a font for your text.', 'sv100' ) )
-				->set_options( $this->get_module( 'sv_webfontloader' )->get_font_options() )
+				->set_options( $this->get_module( 'sv_webfontloader' ) ? $this->get_module( 'sv_webfontloader' )->get_font_options() : array('' => __('Please activate module SV Webfontloader for this Feature.', 'sv100')) )
 				->set_is_responsive(true)
 				->load_type( 'select' );
 
@@ -205,7 +205,7 @@
 			$this->get_setting( 'font_link' )
 				->set_title( __( 'Font Family', 'sv100' ) )
 				->set_description( __( 'Choose a font for your text.', 'sv100' ) )
-				->set_options( $this->get_module( 'sv_webfontloader' )->get_font_options() )
+				->set_options( $this->get_module( 'sv_webfontloader' ) ? $this->get_module( 'sv_webfontloader' )->get_font_options() : array('' => __('Please activate module SV Webfontloader for this Feature.', 'sv100')) )
 				->set_is_responsive(true)
 				->load_type( 'select' );
 
@@ -238,7 +238,7 @@
 			$this->get_setting( 'form_input_font' )
 				->set_title( __( 'Font Family', 'sv100' ) )
 				->set_description( __( 'Choose a font for your text.', 'sv100' ) )
-				->set_options( $this->get_module( 'sv_webfontloader' )->get_font_options() )
+				->set_options( $this->get_module( 'sv_webfontloader' ) ? $this->get_module( 'sv_webfontloader' )->get_font_options() : array('' => __('Please activate module SV Webfontloader for this Feature.', 'sv100')) )
 				->set_is_responsive(true)
 				->load_type( 'select' );
 
@@ -286,7 +286,7 @@
 			$this->get_setting( 'form_label_font' )
 				->set_title( __( 'Font Family', 'sv100' ) )
 				->set_description( __( 'Choose a font for your text.', 'sv100' ) )
-				->set_options( $this->get_module( 'sv_webfontloader' )->get_font_options() )
+				->set_options( $this->get_module( 'sv_webfontloader' ) ? $this->get_module( 'sv_webfontloader' )->get_font_options() : array('' => __('Please activate module SV Webfontloader for this Feature.', 'sv100')) )
 				->set_is_responsive(true)
 				->load_type( 'select' );
 
@@ -334,7 +334,7 @@
 			$this->get_setting( 'form_submit_font' )
 				->set_title( __( 'Font Family', 'sv100' ) )
 				->set_description( __( 'Choose a font for your text.', 'sv100' ) )
-				->set_options( $this->get_module( 'sv_webfontloader' )->get_font_options() )
+				->set_options( $this->get_module( 'sv_webfontloader' ) ? $this->get_module( 'sv_webfontloader' )->get_font_options() : array('' => __('Please activate module SV Webfontloader for this Feature.', 'sv100')) )
 				->set_is_responsive(true)
 				->load_type( 'select' );
 
