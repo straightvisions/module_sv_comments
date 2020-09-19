@@ -3,8 +3,9 @@
 	<div class="sv_setting_subpages">
 		<ul class="sv_setting_subpages_nav"></ul>
 		<?php
-			require_once( $module->get_path( 'lib/backend/tpl/subpage_comments.php' ) );
-			require_once( $module->get_path( 'lib/backend/tpl/subpage_form.php' ) );
+			require_once( $module->get_path( 'lib/tpl/settings/general.php' ) );
+			require_once( $module->get_path( 'lib/tpl/settings/form.php' ) );
 		?>
 	</div>
-<?php } ?>
+	<?php
+}

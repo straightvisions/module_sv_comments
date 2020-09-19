@@ -1,17 +1,17 @@
 <div id="comment-<?php echo $comment->comment_ID; ?>" class="<?php echo $this->get_prefix( 'comment' ); ?>">
 	<?php if ( get_avatar( $comment->comment_author_email, '80px' ) ) { ?>
-	<div class="<?php echo $this->get_prefix( 'author_avatar_wrapper' ); ?>">
-		<div class="<?php echo $this->get_prefix( 'author_avatar' ); ?>">
-			<?php echo get_avatar( $comment->comment_author_email, '80px' ); ?>
+		<div class="<?php echo $this->get_prefix( 'author_avatar_wrapper' ); ?>">
+			<div class="<?php echo $this->get_prefix( 'author_avatar' ); ?>">
+				<?php echo get_avatar( $comment->comment_author_email, '80px' ); ?>
+			</div>
 		</div>
-	</div>
 	<?php } ?>
 	<div class="<?php echo $this->get_prefix( 'comment_content_wrapper' ); ?>">
 		<div class="<?php echo $this->get_prefix( 'comment_content_meta' ); ?>">
 			<div class="<?php echo $this->get_prefix( 'author' ); ?>">
 				<?php echo ( $comment->comment_author_url
-				? '<a href="' . $comment->comment_author_url . '" target="_blank">' . $comment->comment_author . '</a>'
-				: $comment->comment_author ); ?>
+					? '<a href="' . $comment->comment_author_url . '" target="_blank">' . $comment->comment_author . '</a>'
+					: $comment->comment_author ); ?>
 			</div>
 			<div class="<?php echo $this->get_prefix( 'comment_date' ); ?>">
 				<?php

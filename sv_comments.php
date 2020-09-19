@@ -1,27 +1,16 @@
 <?php
 	namespace sv100;
-	
-	/**
-	 * @version         4.022
-	 * @author			straightvisions GmbH
-	 * @package			sv100
-	 * @copyright		2019 straightvisions GmbH
-	 * @link			https://straightvisions.com
-	 * @since			1.000
-	 * @license			See license.txt or https://straightvisions.com
-	 */
-	
+
 	class sv_comments extends init {
 		public function init() {
 			$this->set_module_title( __( 'SV Comments', 'sv100' ) )
 				->set_module_desc( __( 'Display and manage comments in your posts.', 'sv100' ) )
-				->load_settings()
-				->register_scripts()
-				->set_section_title( __( 'Comments', 'sv100' ) )
-				->set_section_desc( __( 'Text & Color settings', 'sv100' ) )
+				->set_css_cache_active()
+				->set_section_title( $this->get_module_title() )
+				->set_section_desc( $this->get_module_desc() )
 				->set_section_type( 'settings' )
-				->set_section_template_path( $this->get_path( 'lib/backend/tpl/settings.php' ) )
-				->set_section_order(34)
+				->set_section_template_path()
+				->set_section_order(5000)
 				->get_root()
 				->add_section( $this );
 		}
@@ -380,19 +369,6 @@
 
 			return $this;
 		}
-	
-		protected function register_scripts(): sv_comments {
-			// Register Styles
-			$this->get_script( 'common' )
-				 ->set_path( 'lib/frontend/css/common.css' );
-			
-			$this->get_script( 'config' )
-				 ->set_path( 'lib/frontend/css/config.php' )
-				 ->set_inline( true );
-	
-			return $this;
-		}
-	
 		public function load( $settings = array() ): string {
 			$settings								= shortcode_atts(
 				array(
@@ -401,43 +377,20 @@
 				$settings,
 				$this->get_module_name()
 			);
-	
-			return $this->router( $settings );
-		}
-	
-		// Handles the routing of the templates
-		protected function router( array $settings ): string {
-			$template = array(
-				'name'      => 'default',
-				'scripts'   => array(
-					$this->get_script( 'common' )->set_inline( $settings['inline'] ),
-				),
-			);
-	
-			return $this->load_template( $template, $settings );
-		}
-	
-		// Loads the templates
-		protected function load_template( array $template, array $settings ) :string {
-			ob_start();
-			
-			foreach ( $template['scripts'] as $script ) {
+
+			foreach($this->get_scripts() as $script){
 				$script->set_is_enqueued();
 			}
-			
-			$this->get_script( 'config' )->set_is_enqueued();
-			
+
 			// WP Comment Reply Script
 			wp_enqueue_script( 'comment-reply' );
-			
-			// Loads the template
-			include ( $this->get_path('lib/frontend/tpl/' . $template['name'] . '.php' ) );
-			$output							        = ob_get_contents();
-			ob_end_clean();
-	
+
+			ob_start();
+			require ( $this->get_path('lib/tpl/frontend/default.php' ) );
+			$output							        = ob_get_clean();
+
 			return $output;
 		}
-		
 		public function custom_comment_list( $comment, $args, $depth ) {
 			// Loads the comment template
 			include ( $this->get_path('lib/frontend/tpl/comment.php' ) );
