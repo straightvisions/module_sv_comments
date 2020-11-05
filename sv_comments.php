@@ -393,6 +393,6 @@
 		}
 		public function custom_comment_list( $comment, $args, $depth ) {
 			// Loads the comment template
-			include ( $this->get_path('lib/frontend/tpl/comment.php' ) );
+			include ( $this->get_path('lib/tpl/frontend/comment.php' ) );
 		}
 	}
