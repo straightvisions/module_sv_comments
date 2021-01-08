@@ -370,20 +370,24 @@
 			return $this;
 		}
 		public function load( $settings = array() ): string {
-			$settings								= shortcode_atts(
-				array(
-					'inline'						=> false,
-				),
-				$settings,
-				$this->get_module_name()
-			);
+			if(!is_admin()) {
+				$this->load_settings()->register_scripts();
+				
+				$settings = shortcode_atts(
+					array(
+						'inline' => false,
+					),
+					$settings,
+					$this->get_module_name()
+				);
 
-			foreach($this->get_scripts() as $script){
-				$script->set_is_enqueued();
+				foreach ($this->get_scripts() as $script) {
+					$script->set_is_enqueued();
+				}
+
+				// WP Comment Reply Script
+				wp_enqueue_script('comment-reply');
 			}
-
-			// WP Comment Reply Script
-			wp_enqueue_script( 'comment-reply' );
 
 			ob_start();
 			require ( $this->get_path('lib/tpl/frontend/default.php' ) );
