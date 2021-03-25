@@ -27,8 +27,8 @@
 			 * @todo: support pingbacks
 			wp_list_comments(
 			array(
-			'style'             => 'ul',
-			'type'              => 'pings'
+			'style'			 => 'ul',
+			'type'			  => 'pings'
 			));
 			*/
 		?>

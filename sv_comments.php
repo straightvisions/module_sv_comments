@@ -391,7 +391,7 @@
 
 			ob_start();
 			require ( $this->get_path('lib/tpl/frontend/default.php' ) );
-			$output							        = ob_get_clean();
+			$output									= ob_get_clean();
 
 			return $output;
 		}
