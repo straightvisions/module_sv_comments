@@ -1,6 +1,6 @@
 /* Comment */
 .sv100_sv_comments {
-	margin-top: 50px;
+	margin: 50px auto 50px auto;
 }
 
 .sv100_sv_comments h3,
@@ -92,4 +92,15 @@
 }
 .comment-respond .form-submit .submit{
 	cursor:pointer;
+	border: 1px solid;
+}
+
+.required-field-message{
+	display: block;
+	font-size: 0.8em;
+	margin: 20px auto;
+}
+
+.logged-in-as{
+	width:100%;
 }
