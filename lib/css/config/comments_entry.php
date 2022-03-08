@@ -1,5 +1,16 @@
 <?php
 	echo $_s->build_css(
+		'.sv100_sv_comments',
+		array_merge(
+			$module->get_setting('font_title')->get_css_data('font-family'),
+			$module->get_setting('font_size_title')->get_css_data('font-size','','px'),
+			$module->get_setting('line_height_title')->get_css_data('line-height'),
+			$module->get_setting('text_color_title')->get_css_data(),
+			$module->get_setting('text_align_title')->get_css_data('text-align')
+		)
+	);
+
+	echo $_s->build_css(
 		'.sv100_sv_comments h3',
 		array_merge(
 			$module->get_setting('font_title')->get_css_data('font-family'),
@@ -11,16 +22,12 @@
 	);
 
 	echo $_s->build_css(
-		'.sv100_sv_comments .sv100_sv_comments_comment',
+		'.sv100_sv_comments .sv100_sv_comments_comment_content > *',
 		array_merge(
 			$module->get_setting('font')->get_css_data('font-family'),
 			$module->get_setting('font_size')->get_css_data('font-size','','px'),
 			$module->get_setting('line_height')->get_css_data('line-height'),
 			$module->get_setting('text_color')->get_css_data(),
-			$module->get_setting('bg_color')->get_css_data('background-color'),
-			$module->get_setting('padding')->get_css_data('padding'),
-			$module->get_setting('margin')->get_css_data(),
-			$module->get_setting('border')->get_css_data()
 		)
 	);
 

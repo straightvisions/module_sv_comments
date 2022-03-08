@@ -21,7 +21,90 @@
 
 			return $this;
 		}
+		protected function register_scripts(): sv_comments{
+			parent::register_scripts();
+
+			if(get_option('show_avatars') === '1'){
+				$this->get_script('avatar')
+					->set_path('lib/css/common/avatar.css');
+			}
+
+			if(comments_open()){
+				$this->get_script('form')
+					->set_path('lib/css/common/form.css');
+			}
+
+			return $this;
+		}
 		protected function load_settings_comments(): sv_comments {
+			$this->get_setting( 'max_width' )
+				->set_title( __( 'Max Width Inner', 'sv100' ) )
+				->set_description( __( 'Set the max width of the header.', 'sv100' ) )
+				->set_options( $this->get_module('sv_common') ? $this->get_module('sv_common')->get_max_width_options() : array('' => __('Please activate module SV Common for this Feature.', 'sv100')) )
+				->set_default_value( '100%' )
+				->set_is_responsive(true)
+				->load_type( 'select' );
+
+			$this->get_setting( 'margin_wrapper' )
+				->set_title( __( 'Margin', 'sv100' ) )
+				->set_is_responsive(true)
+				->load_type( 'margin' );
+
+			$this->get_setting( 'padding_wrapper' )
+				->set_title( __( 'Padding', 'sv100' ) )
+				->set_is_responsive(true)
+				->load_type( 'margin' );
+
+			$this->get_setting( 'border_wrapper' )
+				->set_title( __( 'Border', 'sv100' ) )
+				->set_is_responsive(true)
+				->load_type( 'border' );
+
+			$this->get_setting( 'bg_color_wrapper' )
+				->set_title( __( 'Background Color', 'sv100' ) )
+				->set_is_responsive(true)
+				->load_type( 'color' );
+
+			$this->get_setting( 'margin_comment' )
+				->set_title( __( 'Margin', 'sv100' ) )
+				->set_is_responsive(true)
+				->load_type( 'margin' );
+
+			$this->get_setting( 'padding_comment' )
+				->set_title( __( 'Padding', 'sv100' ) )
+				->set_is_responsive(true)
+				->load_type( 'margin' );
+
+			$this->get_setting( 'border_comment' )
+				->set_title( __( 'Border', 'sv100' ) )
+				->set_is_responsive(true)
+				->load_type( 'border' );
+
+			$this->get_setting( 'bg_color_comment' )
+				->set_title( __( 'Background Color', 'sv100' ) )
+				->set_is_responsive(true)
+				->load_type( 'color' );
+
+			$this->get_setting( 'margin_children' )
+				->set_title( __( 'Margin', 'sv100' ) )
+				->set_is_responsive(true)
+				->load_type( 'margin' );
+
+			$this->get_setting( 'padding_children' )
+				->set_title( __( 'Padding', 'sv100' ) )
+				->set_is_responsive(true)
+				->load_type( 'margin' );
+
+			$this->get_setting( 'border_children' )
+				->set_title( __( 'Border', 'sv100' ) )
+				->set_is_responsive(true)
+				->load_type( 'border' );
+
+			$this->get_setting( 'bg_color_children' )
+				->set_title( __( 'Background Color', 'sv100' ) )
+				->set_is_responsive(true)
+				->load_type( 'color' );
+
 			// Text Settings
 			$this->get_setting( 'font' )
 				->set_title( __( 'Font Family', 'sv100' ) )
@@ -46,28 +129,6 @@
 			$this->get_setting( 'text_color' )
 				->set_title( __( 'Text Color', 'sv100' ) )
 				->set_default_value( '0,0,0,1' )
-				->set_is_responsive(true)
-				->load_type( 'color' );
-
-			$this->get_setting( 'margin' )
-				->set_title( __( 'Margin', 'sv100' ) )
-				->set_is_responsive(true)
-				->load_type( 'margin' );
-
-			$this->get_setting( 'padding' )
-				->set_title( __( 'Padding', 'sv100' ) )
-				->set_is_responsive(true)
-				->load_type( 'margin' );
-
-			$this->get_setting( 'border' )
-				->set_title( __( 'Border', 'sv100' ) )
-				->set_is_responsive(true)
-				->load_type( 'border' );
-
-			// Color Settings
-			$this->get_setting( 'bg_color' )
-				->set_title( __( 'Background Color', 'sv100' ) )
-				->set_default_value( '245,245,245,1' )
 				->set_is_responsive(true)
 				->load_type( 'color' );
 
@@ -372,14 +433,6 @@
 		public function load( $settings = array() ): string {
 			if(!is_admin()) {
 				$this->load_settings()->register_scripts();
-				
-				$settings = shortcode_atts(
-					array(
-						'inline' => false,
-					),
-					$settings,
-					$this->get_module_name()
-				);
 
 				foreach ($this->get_scripts() as $script) {
 					$script->set_is_enqueued();

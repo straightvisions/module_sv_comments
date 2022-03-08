@@ -1,5 +1,5 @@
 <div id="comment-<?php echo $comment->comment_ID; ?>" class="<?php echo $this->get_prefix( 'comment' ); ?>">
-	<?php if ( get_avatar( $comment->comment_author_email, '80px' ) ) { ?>
+	<?php if ( get_option('show_avatars') === '1' && get_avatar( $comment->comment_author_email, '80px' ) ) { ?>
 		<div class="<?php echo $this->get_prefix( 'author_avatar_wrapper' ); ?>">
 			<div class="<?php echo $this->get_prefix( 'author_avatar' ); ?>">
 				<?php echo get_avatar( $comment->comment_author_email, '80px' ); ?>

@@ -1,106 +1,25 @@
-/* Comment */
-.sv100_sv_comments {
-	margin: 50px auto 50px auto;
-}
-
 .sv100_sv_comments h3,
-.sv100_sv_comments .sv100_sv_comments_title,
+.sv100_sv_comments h3.sv100_sv_comments_title,
 .sv100_sv_comments .comment-form h3 {
-	position: relative;
+	max-width:100%;
 }
-
 .sv100_sv_comments .sv100_sv_comments_comment {
 	display: flex;
 }
-.sv100_sv_comments .children{
-	margin-left:20px;
-}
-
-.sv100_sv_comments .sv100_sv_comments_author,
-.sv100_sv_comments .sv100_sv_comments_author a {
-	text-decoration: none;
-	transition: color .25s ease;
-}
-
-.sv100_sv_comments .sv100_sv_comments_author_avatar_wrapper {
-	height: 80px;
-	width: 80px;
-	display: none;
-}
-
-.sv100_sv_comments .sv100_sv_comments_author_avatar {
-	border-radius: 100%;
-	overflow: hidden;
-	height: 100%;
-	width: 100%;
-}
-
-.sv100_sv_comments .sv100_sv_comments_author_avatar img {
-	max-width: 100%;
-	max-height: 100%;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
 .sv100_sv_comments .sv100_sv_comments_comment_content_wrapper {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 }
-
 .sv100_sv_comments_comment_content_meta{
 	display:flex;
 	margin-bottom:20px;
 }
-.sv100_sv_comments_comment_content_meta > *{
-	margin-right:10px;
+.sv100_sv_comments_comment_content_meta{
+	gap:10px;
 }
-.sv100_sv_comments_comment_reply_link a {
-	display: inherit;
-}
-
-/* Comment Form */
-.comment-form{
-	display:flex;
-	flex-wrap:wrap;
-}
-.comment-form input,
-.comment-form textarea{
-	width:100%;
-}
-.comment-form .comment-notes,
-.comment-form .comment-form-comment,
-.comment-form .form-submit{
-	flex-basis: 100%;
-}
-.comment-form .comment-form-author,
-.comment-form .comment-form-email,
-.comment-form .comment-form-url {
-	flex-basis: calc(100% / 3);
-	padding:0 15px 0 15px;
-}
-.comment-form .comment-form-author{
-	padding-left:0;
-}
-.comment-form .comment-form-url{
-	padding-right:0;
-}
-.comment-form label{
-	display:block;
-}
-.comment-respond .form-submit .submit{
-	cursor:pointer;
-	border: 1px solid;
-}
-
-.required-field-message{
-	display: block;
-	font-size: 0.8em;
-	margin: 20px auto;
-}
-
-.logged-in-as{
-	width:100%;
+.sv100_sv_comments ul.children{
+	margin:0;
+	padding:0;
 }
