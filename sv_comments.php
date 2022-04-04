@@ -431,7 +431,7 @@
 			return $this;
 		}
 		public function load( $settings = array() ): string {
-			if(!is_admin()) {
+			if(!is_admin() && have_comments()) {
 				$this->load_settings()->register_scripts();
 
 				foreach ($this->get_scripts() as $script) {
