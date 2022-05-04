@@ -1,0 +1,25 @@
+.sv100_sv_comments h3,
+.sv100_sv_comments h3.sv100_sv_comments_title,
+.sv100_sv_comments .comment-form h3 {
+	max-width:100%;
+}
+.sv100_sv_comments .sv100_sv_comments_comment {
+	display: flex;
+}
+.sv100_sv_comments .sv100_sv_comments_comment_content_wrapper {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.sv100_sv_comments_comment_content_meta{
+	display:flex;
+	margin-bottom:20px;
+}
+.sv100_sv_comments_comment_content_meta{
+	gap:10px;
+}
+.sv100_sv_comments ul.children{
+	margin:0;
+	padding:0;
+}

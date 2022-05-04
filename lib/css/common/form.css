@@ -1,0 +1,47 @@
+.sv100_sv_comments_comment_reply_link a {
+	display: inherit;
+}
+
+/* Comment Form */
+.comment-form{
+	display:flex;
+	flex-wrap:wrap;
+}
+.comment-form input,
+.comment-form textarea{
+	width:100%;
+}
+.comment-form .comment-notes,
+.comment-form .comment-form-comment,
+.comment-form .form-submit{
+	flex-basis: 100%;
+}
+.comment-form .comment-form-author,
+.comment-form .comment-form-email,
+.comment-form .comment-form-url {
+	flex-basis: calc(100% / 3);
+	padding:0 15px 0 15px;
+}
+.comment-form .comment-form-author{
+	padding-left:0;
+}
+.comment-form .comment-form-url{
+	padding-right:0;
+}
+.comment-form label{
+	display:block;
+}
+.comment-respond .form-submit .submit{
+	cursor:pointer;
+	border: 1px solid;
+}
+
+.required-field-message{
+	display: block;
+	font-size: 0.8em;
+	margin: 20px auto;
+}
+
+.logged-in-as{
+	width:100%;
+}
